@@ -27,8 +27,8 @@ public class ListSort {
      */
     public static SortableArrayList mergeSort(SortableArrayList list) {
 
-        var left = new SortableArrayList<>(list.size());
-        var right = new SortableArrayList<>(list.size());
+        var left = new SortableArrayList<>(list.size() / 2 +1);
+        var right = new SortableArrayList<>(list.size() / 2 +1);
         
         int center;
 
@@ -116,10 +116,10 @@ public class ListSort {
      * @todo Implementar quick-sort.
      */
     public static SortableArrayList quickSort(SortableArrayList list) {
-        if (list.isEmpty())
+        if (list.isEmpty() || list.size() == 1)
             return list;
-        var s = new SortableArrayList<>(1000);
-        var g = new SortableArrayList<>(1000);
+        var s = new SortableArrayList<>(list.array.length);
+        var g = new SortableArrayList<>(list.array.length) ;
         var pivot = list.get(0);
         int i;
         Comparable j;

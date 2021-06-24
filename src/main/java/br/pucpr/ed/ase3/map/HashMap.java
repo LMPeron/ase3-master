@@ -59,6 +59,7 @@ public class HashMap<K extends Comparable, V> implements Map<K, V> {
     @Override
     public V put(K key, V value) {
         int hashValue = hashValue(key);
+
         if (mapList[hashValue] == null) {
             mapList[hashValue] = new UnorderedMap<>(5);
         }

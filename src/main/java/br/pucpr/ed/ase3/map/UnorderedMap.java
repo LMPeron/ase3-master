@@ -41,6 +41,13 @@ public class UnorderedMap<K extends Comparable, V> implements Map<K, V> {
      */
     @Override
     public V put(K key, V value) {
+        Entry<K, V> entry = find(key);
+        if (entry != null) {
+            V changed = entry.value;
+            entries.remove(entry);
+            entries.add(entry);
+            return changed;
+        }
         return null;
     }
 
@@ -66,7 +73,7 @@ public class UnorderedMap<K extends Comparable, V> implements Map<K, V> {
     }
 
     @Override
-    public List<V> values() {
+    public List<V> values() { 
         List<V> values = new UnorderedArrayList<V>(entries.size());
         for (int i = 0; i < entries.size(); i++) {
             Entry<K, V> entry = entries.get(i);

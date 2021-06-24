@@ -52,6 +52,7 @@ Cada iteração marcará a duração em milissegundos da alocação, ordenação
 estruturas de dados e algoritmos:  
 * Lista não ordenada com busca sequencial (já implementado)
 * Lista ordenada com busca binária (já implementado)
+
 * Lista não ordenada com ordenação por bubble-sort e busca binária
 * Lista não ordenada com ordenação por merge-sort e busca binária
 * Lista não ordenada com ordenação por shell-sort e busca binária
